@@ -1,0 +1,12 @@
+nav {
+  .search {
+    color: $black-light;
+    background-color: $gray-light;
+    border-color: $gray-lights;
+
+    &:hover {
+      color: $white;
+      background-color: $gray-lights;
+    }
+  }
+}

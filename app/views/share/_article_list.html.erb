@@ -1,0 +1,22 @@
+<div id="list-container">
+  <ul class="article-list">
+    <% @articles.each do |article| %>
+        <li class="have-img">
+          <%= link_to article_path(article), class: 'img-box' do %>
+              <div class="img-item" style="background-image: url('<%= asset_path(article.try(:main_photo)) %>')"></div>
+          <% end %>
+          <div class="article-box">
+            <%= link_to article_path(article), class: 'title' do %>
+                <%= article.title %>
+            <% end %>
+            <p class="abstract">
+              <%= article.text.truncate(100) %>
+            </p>
+           <span><%= article.updated_at.strftime("%Y-%m-%d  %H:%M") %></span>
+            <span class="pull-right"><%= time_ago_in_words(article.updated_at)%>前</span>
+          </div>
+        </li>
+    <% end %>
+    <%= paginate @articles %>
+  </ul>
+</div>

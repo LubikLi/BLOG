@@ -1,0 +1,47 @@
+.infinite-scroll-list {
+  &.all-pages-loaded {
+    .no-more-results {
+      display: block;
+    }
+
+    .loading-spinner {
+      display: none !important; //sass-lint:disable-line no-important
+    }
+  }
+
+  .pagination,
+  .no-more-results {
+    display: none;
+  }
+
+  .no-more-results,
+  .loading-spinner {
+    margin-left: -1px;
+    padding: 20px 0;
+    font-size: 12px;
+    color: $gray;
+
+    .loading-message {
+      margin-left: 6px;
+    }
+  }
+
+  .show-no-more-result {
+    display: block;
+  }
+}
+
+.spinner {
+  display: inline-block;
+  text-align: center;
+
+  .bounce1 {
+    -webkit-animation-delay: -.32s;
+    animation-delay: -.32s;
+  }
+
+  .bounce2 {
+    -webkit-animation-delay: -.16s;
+    animation-delay: -.16s;
+  }
+}

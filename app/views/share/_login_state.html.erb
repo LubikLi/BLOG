@@ -1,0 +1,11 @@
+<h5>
+  <% unless user_signed_in? %>
+      <%= link_to 'Sign in',  new_user_session_path %>
+      <em>or</em>
+      <%= link_to "Sign up", new_user_registration_path %>
+  <% else %>
+      <%= current_user&.display_name %>
+      already logged,
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+  <% end %>
+</h5>

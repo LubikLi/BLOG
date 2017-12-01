@@ -1,0 +1,15 @@
+//= require simditor
+
+//= require_directory ../../../vendor/assets/stylesheets/
+//= require_directory ../../../vendor/assets/stylesheets/
+
+@import 'variables';
+@import 'bootstrap_variables_overrides';
+@import 'bootstrap';
+@import 'select2';
+@import 'select2-bootstrap';
+
+
+@import 'base';
+@import 'share/**/*';
+@import 'pages/**/*';

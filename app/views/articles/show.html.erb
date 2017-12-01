@@ -1,0 +1,86 @@
+<div class="article-container">
+  <h1 class="title"><%= @article.title %></h1>
+  <div class="author">
+    <a class="avatar" href="/u/d0df8f74c800">
+      <img src="//upload.jianshu.io/users/upload_avatars/1969332/18e0efdf-4fe2-4505-89e6-dcf5d5afbdcd.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96" alt="96">
+    </a>
+    <div class="info">
+      <span class="name"><a href="/u/d0df8f74c800">Perry</a></span>
+      <img class="badge-icon" data-toggle="tooltip" title="" src="http://upload.jianshu.io/user_badge/db3aaf4f-effd-43dc-9137-d6bf7f70211e" alt="Db3aaf4f effd 43dc 9137 d6bf7f70211e" data-original-title="简书科技优秀作者">
+      <a class="btn btn-success follow"><i class="iconfont ic-follow"></i><span>关注</span></a>
+      <div class="meta">
+        <span class="publish-time">
+          <%= @article.updated_at.strftime("%Y-%m-%d  %H:%M") %>
+        </span>
+        <span class="wordage">字数 921</span>
+        <span class="views-count">阅读 16</span><span class="comments-count">评论 0</span><span class="likes-count">喜欢 1</span>
+      </div>
+    </div>
+    <!-- 如果是当前作者，加入编辑按钮 -->
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+  <strong>TitleType:</strong>
+  <%= @article.article_type %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+<p>
+  <strongq>Text:</strongq>
+  <%= @article.text %>
+</p>
+<p>
+  <strongq>TextType:</strongq>
+  <%= @article.tags.map(&:name).join(' ') %>
+</p>
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+    <p>
+      <strong>Commenter name:</strong>
+      <%= comment.commenter %>
+    </p>
+
+    <p>
+      <strong>Comment say:</strong>
+      <%= comment.body %>
+    </p>
+    <p>
+      <%= link_to 'Destroy Comment', [comment.article, comment],
+                  method: :delete,
+                  data: {confirm: 'Are you sure?'} %>
+    </p>
+<% end %>
+<h2>Add a comment:</h2>
+<%= form_for([@article, @article.comments.build]) do |f| %>
+    <p>
+      <%= f.label :commenter %><br>
+      <%= f.text_field :commenter %>
+    </p>
+    <p>
+      <%= f.label :body %><br>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
+
+<%= link_to 'edit', edit_article_path %>
+<%= link_to 'back', articles_path %>

@@ -1,0 +1,79 @@
+.articles-page.index {
+  .main-top {
+    margin-bottom: 20px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #f0f0f0;
+
+    .avatar-collection {
+      float: left;
+      width: 80px;
+      height: 80px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ddd;
+        border-radius: 10%;
+      }
+    }
+
+    .title {
+      padding: 10px 0 0 100px;
+    }
+
+    .name {
+      display: inline;
+      font-size: 21px;
+      font-weight: 700;
+      vertical-align: middle;
+    }
+
+    .info {
+      margin-top: 10px;
+      padding-left: 100px;
+      font-size: 14px;
+      color: $color-lighter-text;
+    }
+
+    .btn {
+      float: right;
+      margin: 23px 0 23px 16px;
+      font-size: 15px;
+      border: 1px solid rgba(59, 194, 29, .7);
+      border-radius: 40px
+    }
+
+    .btn-hollow {
+      padding: 8px 0;
+      width: 90px;
+      color: #42c02e !important;
+
+      &:hover {
+        border: 1px solid #42c02e;
+        color: #42c02e !important;
+        background-color: rgba(59, 194, 29, .05);
+      }
+    }
+
+    .follow {
+      padding: 8px 0;
+      width: 100px;
+    }
+  }
+
+  .sider {
+    margin-top: 40px;
+    padding-right: 0;
+
+    .title {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: $gray;
+    }
+
+    .bulletin {
+      overflow: hidden;
+      text-indent: 2em;
+    }
+  }
+}

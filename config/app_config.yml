@@ -1,0 +1,18 @@
+default: &default
+  title: BLOG
+  qiniu:
+    base_url: 'http://BLOG.cn/'
+    preview_size: '?imageView/2/w/100'
+    preview_md_size: '?imageView/2/w/200'
+    preview_lg_size: '?imageView/2/w/600'
+    preview_thumbnail_size: '?imageMogr2/thumbnail/480x360'
+    trial_car_default_image: 'trial_car_default.png'
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

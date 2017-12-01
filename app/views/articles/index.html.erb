@@ -1,0 +1,104 @@
+<div class="container collection">
+  <div class="row">
+    <div class="col-md-8 main">
+      <div class="main-top">
+        <%= link_to articles_path(target: params['target'], tag_id: @tag.id), class: 'avatar-collection' do %>
+            <%= image_tag asset_path(@tag.tag_image), size: 80 %>
+        <% end %>
+        <a class="btn btn-success follow"><i class="iconfont ic-follow"></i><span>关注</span></a>
+        <a class="btn btn-hollow" href="javascript:void(0)">投稿</a>
+        <div class="title">
+          <%= link_to articles_path(target: params['target'], tag_id: @tag.id), class: 'name' do %>
+              @<%= @tag.name %>
+          <% end %>
+        </div>
+        <div class="info">
+          收录了<%= @articles.count %>篇文章 · 794871人关注
+        </div>
+      </div>
+      <%= render 'share/article_list' %>
+    </div>
+    <div class="col-md-4 sider">
+      <p class="title">专题公告</p>
+      <div class="description">
+        <p class="bulletin"><%= @tag.bulletin %></p>
+
+        <pre>
+陕西省互联网举报中心
+围观评论自律管理承诺书
+违法和不良信息举报： 029-6110
+网络文化经营许可证
+互联网药品信息服务资格证书
+©2017BLOG.All Right Reserved
+          </pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="hidden">
+  <br>
+
+  <h1>my blog </h1>
+  <%= render 'share/login_state' %>
+  <h3>
+    Tag：
+    <span><%= active_link_to 'All', articles_path(target: params['target']), active: :exact %></span>
+    &nbsp; &nbsp;
+    <% @tags.each do |tag| %>
+        <span><%= active_link_to tag.name, articles_path(target: params['target'], tag_id: tag.id), active: :exact %></span>
+        &nbsp; &nbsp;
+    <% end %>
+  </h3>
+  <h1>Listing article</h1>
+  <table>
+    <tr>
+      <th>ArticleId</th>
+      <th>ArticleType</th>
+      <th>Title</th>
+      <th>Text</th>
+
+    </tr>
+    <% @articles.each do |article| %>
+        <tr>
+          <td> <%= article.id %> </td>
+          <td><%= article.article_type %></td>
+          <td style="text-align: center"><%= article.title %></td>
+          <td style="text-align: center"><%= article.text %></td>
+          <td><%= link_to 'show', article_path(article) %></td>
+          <td><%= link_to 'edit', edit_article_path(article) %></td>
+          <td><%= link_to 'destroy', article_path(article),
+                          method: :delete,
+                          data: {confirm: '你确定要删除?'} %></td>
+        </tr>
+    <% end %>
+  </table>
+  <br>
+
+  <%= link_to 'New article', new_article_path %>
+
+  <br>
+  <br>
+  <span>Article total: <%= @articles.count %> piece </span>
+  <br>
+  <p>
+    <%= link_to 'Produts', products_path %>
+  </p>
+  <p>
+    <%= link_to ' go back ', welcomes_path %>
+  </p>
+
+
+  <p>
+    <%= link_to ' go picture ', pictures_path %>
+  </p>
+
+  <div> testCode:
+    <% @hot_tags.each do |tag| %>
+        <span><%= tag.name %></span>
+    <% end %>
+  </div>
+</div>

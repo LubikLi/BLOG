@@ -1,0 +1,54 @@
+$default-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', SimSun, sans-serif;
+
+// colors
+$orange: #ff7e10;
+$orange-light: #ffb800;
+$red: #de5346;
+$red-oxblood: #f82d1a;
+$violet: #de46ae;
+$green: #99ce90;
+$green-light: #8be0c8;
+$green-dark: #59c2c0;
+$blue-light: #75a1dd;
+$blue-lightest: #8dd3e8;
+$blue: #2a90d7;
+$blued: #5897fb;
+$black: #000;
+$black-light: #3e3e3e;
+$black-lightest: #202020;
+$black-lighter: #505050;
+$gray-lighter: #666;
+$gray: #999;
+$gray-lights: #cecece;
+$gray-light: #e6e6e6;
+$gray-lightest: #f5f5f5;
+$gray-white: #f8f8f8;
+$white-dark: #fdfdfd;
+$white-gray: #fafafa;
+$white: #fff;
+
+// activity
+$attention: #61cdc3;
+$creation: #de5346;
+$comment: #ffd55d;
+$sharing: #5396ff;
+$browsing: #a794f9;
+
+$color-darkest-text: $black-lightest;
+$color-text: $black-light;
+$color-light-text: $black-lighter;
+$color-lights-text: $gray-lights;
+$color-lighter-text: $gray;
+$color-lightest-text: #ccc;
+$color-white-text: $white;
+$color-border: $gray-light;
+
+$color-bg-default: $gray-lightest;
+$border-gray-color: #f0f0f0;
+
+$nav-bg-color: #262626;
+$banner-bottom-bg: rgba(0, 0, 0, .5);
+$magnifier-bg: rgba(0, 0, 0, .6);
+$white-light: rgba(255, 255, 255, .18);
+$red-show: rgba(5, 68, 87, .12);
+$search-btn-color: $red;
