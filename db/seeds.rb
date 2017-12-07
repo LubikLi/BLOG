@@ -39,7 +39,7 @@ if Article.count == 0
   10.times.each do |index|
     article = Article.create!(title: "#{index}摩拜和ofo到底是靠什么盈利的？天天免费骑，真的不会破产吗？") do |article|
       article.text = '11月28日，指南者在广汽菲克Jeep广州工厂正式下线，也是这款车型首次在全球亮相。全新指南者定位介于自由光与自由侠之间，为广汽菲克Jeep品牌第三款SUV车型。相比现款车型，新车在外观及内饰方面均经过全面修改。动力系统方面。新车将搭载了1.4T涡轮增压发动机和2.4L自然吸气发动机。新车预计于年内'
-      if Random.rand(1..10) > 5
+      if Random.rand(1..10) > 7
         article.is_recommend = true
       end
     end

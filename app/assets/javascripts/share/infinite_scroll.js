@@ -55,6 +55,6 @@ Blog.setupInfiniteScroll.init = function (wrapSelector, itemSelector, callback) 
 
 $(document).on('turbolinks:load', function () {
 
-    Blog.setupInfiniteScroll.init('.article_list', '.article_list li');
+    Blog.setupInfiniteScroll.init('.article-list', '.article-list li');
 
 });

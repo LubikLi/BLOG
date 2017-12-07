@@ -18,6 +18,9 @@
     </div>
     <!-- 如果是当前作者，加入编辑按钮 -->
   </div>
+  <div class="show-content">
+    <%= @article.text %>
+  </div>
 </div>
 
 
@@ -33,54 +36,55 @@
 
 
 
+<div class="hidden">
+  <p>
+    <strong>TitleType:</strong>
+    <%= @article.article_type %>
+  </p>
+  <p>
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </p>
+  <p>
+    <strongq>Text:</strongq>
+    <%= @article.text %>
+  </p>
+  <p>
+    <strongq>TextType:</strongq>
+    <%= @article.tags.map(&:name).join(' ') %>
+  </p>
+  <h2>Comments</h2>
+  <% @article.comments.each do |comment| %>
+      <p>
+        <strong>Commenter name:</strong>
+        <%= comment.commenter %>
+      </p>
 
-<p>
-  <strong>TitleType:</strong>
-  <%= @article.article_type %>
-</p>
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-<p>
-  <strongq>Text:</strongq>
-  <%= @article.text %>
-</p>
-<p>
-  <strongq>TextType:</strongq>
-  <%= @article.tags.map(&:name).join(' ') %>
-</p>
-<h2>Comments</h2>
-<% @article.comments.each do |comment| %>
-    <p>
-      <strong>Commenter name:</strong>
-      <%= comment.commenter %>
-    </p>
+      <p>
+        <strong>Comment say:</strong>
+        <%= comment.body %>
+      </p>
+      <p>
+        <%= link_to 'Destroy Comment', [comment.article, comment],
+                    method: :delete,
+                    data: {confirm: 'Are you sure?'} %>
+      </p>
+  <% end %>
+  <h2>Add a comment:</h2>
+  <%= form_for([@article, @article.comments.build]) do |f| %>
+      <p>
+        <%= f.label :commenter %><br>
+        <%= f.text_field :commenter %>
+      </p>
+      <p>
+        <%= f.label :body %><br>
+        <%= f.text_area :body %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+  <% end %>
 
-    <p>
-      <strong>Comment say:</strong>
-      <%= comment.body %>
-    </p>
-    <p>
-      <%= link_to 'Destroy Comment', [comment.article, comment],
-                  method: :delete,
-                  data: {confirm: 'Are you sure?'} %>
-    </p>
-<% end %>
-<h2>Add a comment:</h2>
-<%= form_for([@article, @article.comments.build]) do |f| %>
-    <p>
-      <%= f.label :commenter %><br>
-      <%= f.text_field :commenter %>
-    </p>
-    <p>
-      <%= f.label :body %><br>
-      <%= f.text_area :body %>
-    </p>
-    <p>
-      <%= f.submit %>
-    </p>
-<% end %>
-
-<%= link_to 'edit', edit_article_path %>
-<%= link_to 'back', articles_path %>
+  <%= link_to 'edit', edit_article_path %>
+  <%= link_to 'back', articles_path %>
+</div>
