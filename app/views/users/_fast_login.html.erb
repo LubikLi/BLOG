@@ -1,0 +1,71 @@
+<div class="fast-login login-box <%= params.key?(:fast_login) ? 'show' : '' %>">
+  <% if message %>
+      <div class="login-error active"><%= message %></div>
+  <% end %>
+  <div class="modal-header text-center modal-header-gray ">
+    快速登录
+  </div>
+  <div class="modal-body text-center">
+    <div id="login" class="login">
+      <%= form_for :user,
+                   url: user_session_path,
+                   html: {class: 'form-horizontal login-form has-feedback', role: 'form'} do |f| %>
+          <input type="hidden" name="fast_login" value="true">
+          <div class="form-group">
+            <%= f.telephone_field :phone,
+                                  class: 'form-control',
+                                  id: 'inputPhone',
+                                  placeHolder: '手机号',
+                                  maxlength: '11',
+                                  pattern: '^(13[0-9]|14[579]|15[0-3,5-9]|17[0135678]|18[0-9])\\d{8}$',
+                                  'data-error': '您输入的手机号码格式不正确',
+                                  value: params.dig(:user, :phone),
+                                  required: true %>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <%= f.password_field :pre_pass,
+                                 minlength: '6',
+                                 class: 'form-control password',
+                                 autocomplete: 'new-password',
+                                 maxlength: '16',
+                                 'data-minlength': '6',
+                                 'data-error': '最少6个字符',
+                                 placeHolder: '密码可预设' %>
+            <div class="help-block with-errors preset-password">
+            </div>
+          </div>
+          <div class="form-group validation-code">
+            <%= f.text_field :validation_code,
+                             class: 'form-control',
+                             placeHolder: '6位数验证码',
+                             pattern: '^\d{6,}$',
+                             maxlength: '6',
+                             required: true %>
+            <div class="get-code">
+              <button class="validation-code-btn">
+                获取验证码
+              </button>
+            </div>
+          </div>
+          <div class="form-group login-button-box">
+            <button type="submit" class="login-button btn-primary">登录</button>
+          </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="change-login-button">
+    <span>账号登录</span>
+  </div>
+
+  <div class="back-btn">
+    <%= image_tag('close.png') %>
+    <% if !request.referer %>
+        <%= link_to '', root_path %>
+    <% elsif request.referer == new_user_session_url %>
+        <%= link_to '', root_path %>
+    <% else %>
+        <%= link_to '', request.referer %>
+    <% end %>
+  </div>
+</div>

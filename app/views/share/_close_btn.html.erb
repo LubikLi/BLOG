@@ -1,0 +1,10 @@
+<div class="back-btn">
+  <%= image_tag('close.png') %>
+  <% if !request.referer %>
+      <%= link_to '', root_path %>
+  <% elsif request.referer == new_user_session_url %>
+      <%= link_to '', root_path %>
+  <% else %>
+      <%= link_to '', request.referer %>
+  <% end %>
+</div>

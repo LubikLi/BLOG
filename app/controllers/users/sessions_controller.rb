@@ -1,6 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
   layout 'sessions'
-  prepend_before_action :hack_devise
 
   def new
   end
@@ -28,9 +27,4 @@ class Users::SessionsController < Devise::SessionsController
     {scope: resource_name, recall: root_path}
   end
 
-
-  private
-  def hack_devise
-    request.env['devise.mapping'] = Devise.mappings[:user]
-  end
 end
