@@ -1,18 +1,18 @@
 @media (max-width: 768px) {
-  .login-container {
-    height: auto;
-    min-height: 0;
-    background-color: transparent;
-  }
-
-  .login-box {
-    position: absolute;
-    left: 50%;
-    margin: 0 0 0 -230px;
-  }
-
   body.users-sessions-page {
     background: $white;
+
+    .login-container {
+      height: auto;
+      min-height: 0;
+      background-color: transparent;
+    }
+
+    .login-box {
+      position: absolute;
+      left: 50%;
+      margin: 0 0 0 -230px;
+    }
   }
 }
 

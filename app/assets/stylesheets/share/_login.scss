@@ -1,205 +1,202 @@
 body.users-sessions-page {
   background: $white-gray;
   padding: 0 !important;
-}
 
-.login-container {
-  overflow: hidden;
-  height: 100%;
-  min-height: 750px;
-  text-align: center;
-  font-size: 14px;
-  background: $white-gray;
-}
-
-.login-box {
-  position: relative;
-  margin: 60px auto 0;
-  border-radius: 4px;
-  background: $white;
-}
-
-.help-box {
-  width: 0;
-  height: 100%;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.login-box {
-  width: 460px;
-  vertical-align: middle;
-
-  .modal-header {
-    padding: 30px 0;
-    border-bottom: 0;
-    font-size: 30px;
-    color: $color-text;
+  .login-container {
+    overflow: hidden;
+    height: 100%;
+    min-height: 750px;
+    text-align: center;
+    font-size: 14px;
+    background: $white-gray;
   }
 
-  .modal-body {
-    padding: 0 50px 24px;
+  .help-box {
+    width: 0;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
 
-    .login {
-      overflow: hidden;
+  .login-box {
+    position: relative;
+    margin: 60px auto 0;
+    border-radius: 4px;
+    background: $white;
+    width: 460px;
+    vertical-align: middle;
+
+    .modal-header {
+      padding: 30px 0;
+      border-bottom: 0;
+      font-size: 30px;
+      color: $color-text;
     }
 
-    .form-group {
-      margin-right: 0;
-      margin-bottom: 30px;
-      margin-left: 0;
+    .modal-body {
+      padding: 0 50px 24px;
 
-      .with-errors {
-        display: block;
+      .login {
+        overflow: hidden;
       }
 
-      .preset-password {
-        display: none;
+      .form-group {
+        margin-right: 0;
+        margin-bottom: 30px;
+        margin-left: 0;
+
+        .with-errors {
+          display: block;
+        }
+
+        .preset-password {
+          display: none;
+        }
+
+        .help-block {
+          position: absolute;
+        }
+
+        input {
+          height: 40px;
+          border: 1px solid $color-border;
+          font-size: 16px;
+          color: $black-light;
+          box-sizing: border-box;
+        }
+
+        .get-code {
+          position: absolute;
+          bottom: 98px;
+          right: 0;
+          width: 122px;
+          height: 30px;
+          border-left: 1px solid $color-border;
+          line-height: 30px;
+          color: $green-dark;
+          cursor: pointer;
+          opacity: .8;
+
+          .validation-code-btn {
+            border: 0;
+            background: transparent;
+
+            &:hover {
+              opacity: .3;
+            }
+          }
+
+          .disabled {
+            cursor: not-allowed;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
       }
 
-      .help-block {
-        position: absolute;
+      .validation-code {
+        margin-bottom: 47px;
       }
 
-      input {
-        height: 40px;
-        border: 1px solid $color-border;
-        font-size: 16px;
-        color: $black-light;
-        box-sizing: border-box;
+      .accout-password {
+        margin-bottom: 47px;
       }
 
-      .get-code {
-        position: absolute;
-        bottom: 98px;
-        right: 0;
-        width: 122px;
-        height: 30px;
-        border-left: 1px solid $color-border;
-        line-height: 30px;
-        color: $green-dark;
-        cursor: pointer;
-        opacity: .8;
+      .login-button-box {
+        margin-bottom: 0;
 
-        .validation-code-btn {
+        .login-button {
+          width: 100%;
+          height: 46px;
           border: 0;
-          background: transparent;
+          font-size: 18px;
+          line-height: 46px;
+          text-align: center;
+          background: $green-dark;
+          cursor: pointer;
+          opacity: .8;
 
           &:hover {
-            opacity: .3;
+            opacity: .5;
           }
         }
 
         .disabled {
+          padding: 0;
+          box-shadow: none;
           cursor: not-allowed;
+          opacity: .65;
+          filter: alpha(opacity=65);
+          -webkit-box-shadow: none;
+        }
 
-          &:hover {
-            opacity: 1;
-          }
+        .btn-primary {
+          color: $color-white-text;
+          background: $green-dark;
         }
       }
     }
 
-    .validation-code {
-      margin-bottom: 47px;
-    }
+    .change-login-button {
+      margin: 0 10px 20px;
+      padding-top: 20px;
+      width: 440px;
+      border-top: 1px solid $color-border;
+      font-size: 16px;
+      text-align: center;
+      color: $color-light-text;
+      cursor: pointer;
+      text-decoration: underline;
 
-    .accout-password {
-      margin-bottom: 47px;
-    }
-
-    .login-button-box {
-      margin-bottom: 0;
-
-      .login-button {
-        width: 100%;
-        height: 46px;
-        border: 0;
-        font-size: 18px;
-        line-height: 46px;
-        text-align: center;
-        background: $green-dark;
-        cursor: pointer;
-        opacity: .8;
-
+      span {
         &:hover {
-          opacity: .5;
+          text-decoration: underline;
         }
       }
-
-      .disabled {
-        padding: 0;
-        box-shadow: none;
-        cursor: not-allowed;
-        opacity: .65;
-        filter: alpha(opacity=65);
-        -webkit-box-shadow: none;
-      }
-
-      .btn-primary {
-        color: $color-white-text;
-        background: $green-dark;
-      }
     }
-  }
 
-  .change-login-button {
-    margin: 0 10px 20px;
-    padding-top: 20px;
-    width: 440px;
-    border-top: 1px solid $color-border;
-    font-size: 16px;
-    text-align: center;
-    color: $color-light-text;
-    cursor: pointer;
-    text-decoration: underline;
+    .login-error {
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      margin-left: -150px;
+      width: 300px;
+      height: 38px;
+      border: 1px solid $green-dark;
+      border-radius: 5px;
+      line-height: 38px;
+      text-align: center;
+      color: $green-dark;
+      opacity: 0;
+      transition: top, opacity 1s;
+      transition-delay: 3s;
+      -webkit-transition: top, opacity 1s; // sass-lint：disable-all
+      -moz-transition: top, opacity 1s; // sass-lint：disable-all
+      -ms-transition: top, opacity 1s; // sass-lint: ignore
+      -o-transition: top, opacity 1s; // sass-lint: ignore
+      box-sizing: border-box;
 
-    span {
-      &:hover {
-        text-decoration: underline;
+      &.active {
+        top: -60px;
+        opacity: 1;
       }
     }
   }
 
-  .login-error {
-    position: absolute;
-    top: -80px;
-    left: 50%;
-    margin-left: -150px;
-    width: 300px;
-    height: 38px;
-    border: 1px solid $green-dark;
-    border-radius: 5px;
-    line-height: 38px;
-    text-align: center;
-    color: $green-dark;
-    opacity: 0;
-    transition: top, opacity 1s;
-    transition-delay: 3s;
-    -webkit-transition: top, opacity 1s; // sass-lint：disable-all
-    -moz-transition: top, opacity 1s; // sass-lint：disable-all
-    -ms-transition: top, opacity 1s; // sass-lint: ignore
-    -o-transition: top, opacity 1s; // sass-lint: ignore
-    box-sizing: border-box;
-
-    &.active {
-      top: -60px;
-      opacity: 1;
-    }
+  .account-number-login,
+  .fast-login {
+    display: none;
   }
-}
 
-.account-number-login,
-.fast-login {
-  display: none;
-}
+  .show {
+    display: inline-block !important;
+  }
 
-.show {
-  display: inline-block !important;
-}
-
-.has-error .help-block {
-  color: $red;
+  .has-error .help-block {
+    color: $red;
+  }
 }
 
 .back-btn {
