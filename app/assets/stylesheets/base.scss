@@ -4,17 +4,18 @@ $global-width: 960px;
   display: none;
 }
 
-html {
+html,body {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
+  padding-top: 52px!important;
   position: relative;
-  padding-top: 52px;
   font-family: $default-font-family;
   font-size: 14px;
   color: $color-text;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   &.accusations-page {
     height: inherit;
@@ -26,6 +27,7 @@ body {
 }
 
 .main {
+  overflow: hidden;
   margin: 0 auto;
   padding-left: 0;
 }

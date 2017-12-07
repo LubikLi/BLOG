@@ -4,15 +4,18 @@
     <div class="col-md-8 main">
       <div class="recommend-collection">
         <% @tags.each do |tag| %>
-            <%= link_to articles_path(target: params['target'], tag_id: tag.id), class:'collection' do %>
-                <%= image_tag asset_path(tag.tag_image),size: 32 %>
-              <div class="name">
-                <%= tag.name %>
-              </div>
+            <%= link_to articles_path(target: params['target'], tag_id: tag.id), class: 'collection' do %>
+                <%= image_tag asset_path(tag.tag_image), size: 32 %>
+                <div class="name">
+                  <%= tag.name %>
+                </div>
             <% end %>
         <% end %>
       </div>
       <%= render 'share/article_list' %>
+    </div>
+    <div class="col-md-4">
+
     </div>
   </div>
 </div>
