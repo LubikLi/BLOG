@@ -28,14 +28,21 @@
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li>
+          <% unless user_signed_in? %>
+              <%= link_to '登录', new_user_session_path %>
+          <% else %>
+              <%= link_to user_session_path, class: 'user-name-box fl' do %>
+                  <span class="navbar-right-user-name"><%= current_user&.display_name %></span>
+              <% end %>
+              <%= link_to '退出', destroy_user_session_path, class: 'sign-out', method: :delete %>
+          <% end %>
+        </li>
+        <li>
           <%= link_to '发现', root_path %>
         </li>
         <li>
           <%= link_to '投稿', '#' %>
         </li>
-        <li>
-          <a href="#">图片</a></li>
-        <li><a href="#">视频</a></li>
         <li><a href="#">留言反馈</a></li>
       </ul>
     </div>

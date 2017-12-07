@@ -1,12 +1,38 @@
 nav {
   .search {
-    color: $black-light;
+    color: $color-text;
     background-color: $gray-light;
     border-color: $gray-lights;
 
     &:hover {
       color: $white;
       background-color: $gray-lights;
+    }
+  }
+}
+
+.navbar-default {
+  background: $white;
+
+  .navbar-nav {
+    li {
+      a {
+        float: left;
+        font-size: 14px;
+        color: $color-text;
+
+        &:hover {
+          background: $color-bg-default;
+        }
+      }
+
+      .user-name-box {
+        padding: 15px 5px;
+      }
+
+      .sign-out {
+        padding: 15px 5px;
+      }
     }
   }
 }
