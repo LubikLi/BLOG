@@ -28,6 +28,7 @@ gem 'draper'
 gem 'pundit'
 gem 'aasm'
 gem 'qiniu'
+gem 'impressionist'
 
 group :development, :test do
   gem 'byebug', platform: :mri
